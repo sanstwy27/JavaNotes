@@ -13,6 +13,7 @@
         <module>Fundamental/Singleton</module>
         <module>Fundamental/Initialization</module>
         <module>Fundamental/testtt</module>
+        <module>Fundamental/ParameterPassing</module>
     </modules>
 
 
