@@ -1,0 +1,15 @@
+server:
+  port: 8001
+
+spring:
+  application:
+    name: book-shop-service
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: org.gjt.mm.mysql.Driver
+    url: jdbc:mysql://localhost:13306/cloud2020?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: cloud
+    password: cloud
+
+mybatis:
+  mapperLocations: classpath:mapper/*.xml

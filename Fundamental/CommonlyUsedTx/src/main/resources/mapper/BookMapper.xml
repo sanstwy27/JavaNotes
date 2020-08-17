@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.sanstwy27.dao.BookShopDao">
+
+    <select id="findBookByIsbn" parameterType="java.lang.String"  resultType="com.sanstwy27.beans.Book">
+        SELECT * FROM book WHERE isbn=#{isbn}
+    </select>
+
+    <update id="updateBookStock">
+        update book_stock
+        set stock = stock -1
+        where isbn=#{isbn}
+    </update>
+
+    <update id="updateUserAccountBalance">
+        update account
+        set balance = balance - #{price}
+        where balance &gt;= #{price} and id = #{userId}
+    </update>
+
+</mapper>
