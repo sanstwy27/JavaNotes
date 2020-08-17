@@ -12,6 +12,7 @@
         <module>helloworld</module>
         <module>SelfIncrement</module>
         <module>Singleton</module>
+        <module>Initialization</module>
     </modules>
 
 
