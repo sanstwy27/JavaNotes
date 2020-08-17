@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <!--<bean id="book" class="com.sanstwy27.beans.Book">-->
+    <!--<bean id="book" class="com.sanstwy27.beans.Book" scope="singleton">-->
+    <bean id="book" class="com.sanstwy27.beans.Book" scope="prototype">
+        <property name="name" value="Tour guide"/>
+        <property name="pages" value="432"/>
+    </bean>
+
+</beans>
