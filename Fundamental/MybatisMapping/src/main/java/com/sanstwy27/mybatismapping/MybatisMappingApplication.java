@@ -1,0 +1,13 @@
+package com.sanstwy27.mybatismapping;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class MybatisMappingApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(MybatisMappingApplication.class, args);
+    }
+
+}
