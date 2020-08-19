@@ -28,5 +28,11 @@ public class VariableScope {
         obj2.test(30);
         System.out.println(obj1.i + "," + obj1.j + "," + obj1.s);
         System.out.println(obj2.i + "," + obj2.j + "," + obj2.s);
+
+        /**
+         * ans:
+         * 2,1,5
+         * 1,1,5
+         */
     }
 }
