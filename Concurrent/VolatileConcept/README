@@ -1,0 +1,5 @@
+1. guarantee
+    - visibility, happens-before ordering (the volatile variable rule of the Java Memory Model)
+    - instructions ordering (disable out-of-order)
+2. not guarantee
+    - atomic
