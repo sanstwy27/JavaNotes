@@ -1,0 +1,18 @@
+ShoppingCart:
+1. add items to cart
+    (1). unlogin
+        a. Redis
+        b. Cookie
+    (2). login
+        a. Redis
+            - Hash: hset(key,field,value)
+                - key:user:userId:cart
+                - hset(key,skuId,value)
+        b. Database
+            - Oracle, Mysql, etc.
+2. display cart
+    (1). unlogin
+        cookie
+    (2). login
+        redis + cookie
+
