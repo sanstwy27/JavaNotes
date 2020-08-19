@@ -1,0 +1,19 @@
+# Create Branch
+git branch <name>
+
+# Look Over
+git branch -v <name>
+
+# Switch Branch
+git checkout <name>
+
+# Create and Switch Branch
+git checkout -b <name>
+
+# Merge Branch
+git checkout master
+git merge <name>
+
+# Delete Branch
+git checkout master
+git branch -D <name>
