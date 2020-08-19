@@ -1,0 +1,15 @@
+1. Persistence Methods
+    (1). RDB: Snapshot
+    (2). AOF: Record Writing Operations with Journal
+
+2. Scenes
+    (1). String
+        ex: block specific ip address
+    (2). Hash
+        ex: store user info
+    (3). List
+        ex: message queue
+    (4). Set
+        ex: common friends
+    (5). Zset (all the elements of the sorted set matching the conditions)
+        ex: search results by price
