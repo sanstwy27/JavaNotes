@@ -44,3 +44,9 @@ CAS concurrent performance is relatively better than synchronized method.
 - CPU resources
 - one atomic variable per operation
 - ABA problem
+T1    100    ->     100
+T2    100 -> 101 -> 100
+
+# Solve ABA problem (stamp)
+T1    100 1     ->      100 2
+T2    100 1 -> 101 2 -> 100 3
