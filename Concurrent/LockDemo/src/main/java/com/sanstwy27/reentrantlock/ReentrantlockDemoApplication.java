@@ -1,4 +1,4 @@
-package com.sanstwy27.reentrantlockdemo;
+package com.sanstwy27.reentrantlock;
 
 public class ReentrantlockDemoApplication {
 
