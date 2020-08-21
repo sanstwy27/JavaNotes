@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.sanstwy27</groupId>
-    <artifactId>cas-demo</artifactId>
+    <artifactId>CasDemo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>cas-demo</name>
+    <name>CasDemo</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
