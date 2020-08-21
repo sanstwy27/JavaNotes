@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.sanstwy27</groupId>
-    <artifactId>reentrantlock-demo</artifactId>
+    <artifactId>LockDemo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>reentrantlock-demo</name>
+    <name>LockDemo</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>

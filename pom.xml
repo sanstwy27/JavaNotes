@@ -12,6 +12,8 @@
         <module>Concurrent/CasDemo</module>
         <module>Concurrent/Singleton</module>
         <module>Concurrent/VolatileConcept</module>
+        <module>Concurrent/LockDemo</module>
+        <module>Concurrent/CollectionProblem</module>
         <module>Fundamental/SelfIncrement</module>
         <module>Fundamental/Initialization</module>
         <module>Fundamental/ParameterPassing</module>
