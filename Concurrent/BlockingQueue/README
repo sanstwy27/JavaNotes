@@ -1,0 +1,40 @@
+# BlockingQueue extends Collection
+- **ArrayBlockingQueue**：A bounded blocking queue backed by an array.
+- **LinkedBlockingQueue**：A bounded blocking queue backed by a linked list. (Integer.MAX_VALUE)
+- PriorityBlockingQueue：An unbounded blocking queue that uses the same ordering rules as class PriorityQueue and supplies blocking retrieval operations.
+- DelayQueue：An unbounded blocking queue of Delayed elements, in which an element can only be taken when its delay has expired.
+- **SynchronousQueue**：A blocking queue in which each insert operation must wait for a corresponding remove operation by another thread, and vice versa.
+- LinkedTransferQueue：An unbounded TransferQueue based on linked nodes.
+- LinkedBlockingDeque：An optionally-bounded blocking deque based on linked nodes.
+
+# Thread Pool Stack
+- ArrayBlockingQueue
+- LinkedBlockingQueue
+- SynchronousQueue
+
+# Method
+
+| Method | Throwable Method                         |
+| ----   | --------------------------------------   |
+| Insert | add(e)<br> throw an exception if full    |
+| Remove | remove()<br> throw an exception if empty |
+| Check  | element()<br> return heading element     |
+
+| Method | Return Specific Value                    |
+| ----   | ---------------------------------------  |
+| Insert | offer(e)<br> true if success else false  |
+| Remove | poll()<br> null if failed                |
+| Check  | peek()                                   |
+
+| Method | Blocking                  |
+| ----   | ----------------------    |
+| Insert | put(e)<br> block if full  |
+| Remove | take()<br> block if empty |
+| Check  | none                      |
+
+| Method | Timeout            |
+| ----   | ------------------ |
+| Insert | offer(e,time,unit) |
+| Remove | poll(time,unit)    |
+| Check  | none               |
+
