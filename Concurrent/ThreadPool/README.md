@@ -91,10 +91,11 @@ Here is the reasons:
   
 ### Performance tuning
 
-- CPU bound: threads = core processor + 1
+    core processors = Runtime.getRuntime(),availableProcessors()
+- CPU bound: threads = core processors + 1
 - I/O bound: 
-  1. threads = core processor * 2
-  2. threads = core processor / (1 - coefficient), where coefficient between 0.8~0.9
+  1. threads = core processors * 2
+  2. threads = core processors / (1 - coefficient), where coefficient between 0.8~0.9
   
 ### Reference:
 1. http://www.atguigu.com/
