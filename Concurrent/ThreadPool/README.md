@@ -85,7 +85,7 @@ NullPointerException - if workQueue or threadFactory or handler is null
 
 None, it's highly recommended customizing one.
 
-Here is the reasons:
+Here are the reasons:
 - FixedThreadPool, SingleThreadPool: the upper bound length of LinkedBlockingQueue is Integer.MAX_VALUE, it might be "Out of memory (OOM)".
 - CachedThreadPool, ScheduledThreadPool: the upper bound number of Threads is Integer.MAX_VALUE, it might be "Out of memory (OOM)".
   
