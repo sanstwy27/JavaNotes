@@ -1,6 +1,6 @@
 # JVM Questions
 
-1. How to Define Garbage?
+#### 1. How to Define Garbage?
 
 - Reference Counting Algorithm
 
