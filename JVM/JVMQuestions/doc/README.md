@@ -69,4 +69,34 @@
   - -XX:MaxTenuringThreshold, survival times in S0/S1, default is 15, must be between 0 and 15.
   - ...
 
+#### 4. References
+
+- Type
+    - Strong Reference
+      - This is the default type/class of Reference Object. This kind of reference makes the referenced object not eligible for GC. That is, whenever an object is referenced by a chain of strong Reference Objects, it cannot be garbage collected.
+    - Soft Reference
+      - All soft references to softly reachable objects are guaranteed to have been cleared before the virtual machine throws an OutOfMemoryError.
+    - Weak Reference
+      - Weak reference objects do not prevent their referents from being made finalizable, finalized, and then reclaimed.
+    - Phantom Reference
+      - Phantom reference objects are enqueued after the collector determines that their referents may otherwise be reclaimed. Phantom references are most often used for scheduling pre-mortem cleanup actions in a more flexible way than is possible with the Java finalization mechanism. Unlike soft and weak references, phantom references are not automatically cleared by the garbage collector as they are enqueued. An object that is reachable via phantom references will remain so until all such references are cleared or themselves become unreachable.
+- FAQ
+  - scheme of soft Reference and weak Reference
+    - ex: photo cahce
+    ```java
+    Map<String, SoftReference<Bitmap>>
+    ```
+
+https://stackoverflow.com/questions/9809074
+https://dzone.com/articles/weak-soft-and-phantom-references-in-java-and-why-they-matter
+
+
+
+
+
+
+
+
+
+
 
