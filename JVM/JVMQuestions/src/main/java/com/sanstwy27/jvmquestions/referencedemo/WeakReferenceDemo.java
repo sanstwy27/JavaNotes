@@ -1,4 +1,4 @@
-package com.sanstwy27.jvmquestions;
+package com.sanstwy27.jvmquestions.referencedemo;
 
 import java.lang.ref.WeakReference;
 

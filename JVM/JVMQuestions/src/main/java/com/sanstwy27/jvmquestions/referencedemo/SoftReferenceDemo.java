@@ -1,4 +1,4 @@
-package com.sanstwy27.jvmquestions;
+package com.sanstwy27.jvmquestions.referencedemo;
 
 import java.lang.ref.SoftReference;
 
@@ -164,8 +164,8 @@ public class SoftReferenceDemo {
              * [0.359s][info   ][gc,heap,exit   ]  Metaspace       used 688K, capacity 4538K, committed 4864K, reserved 1056768K
              * [0.359s][info   ][gc,heap,exit   ]   class space    used 63K, capacity 403K, committed 512K, reserved 1048576K
              * Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
-             * 	at com.sanstwy27.jvmquestions.SoftReferenceDemo.demo2(SoftReferenceDemo.java:55)
-             * 	at com.sanstwy27.jvmquestions.SoftReferenceDemo.main(SoftReferenceDemo.java:13)
+             * 	at com.sanstwy27.jvmquestions.referencedemo.SoftReferenceDemo.demo2(SoftReferenceDemo.java:55)
+             * 	at com.sanstwy27.jvmquestions.referencedemo.SoftReferenceDemo.main(SoftReferenceDemo.java:13)
              */
         }
     }
