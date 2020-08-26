@@ -37,7 +37,7 @@
         - -XX:MaxTenuringThreshold=15
         - ...
   
-- Diaplay
+- Display
     - by CMD
       - list processes: jps -l
       - specific param: jinfo -flag [param] [PID]
@@ -81,18 +81,35 @@
     - Phantom Reference
       - Phantom reference objects are enqueued after the collector determines that their referents may otherwise be reclaimed. Phantom references are most often used for scheduling pre-mortem cleanup actions in a more flexible way than is possible with the Java finalization mechanism. Unlike soft and weak references, phantom references are not automatically cleared by the garbage collector as they are enqueued. An object that is reachable via phantom references will remain so until all such references are cleared or themselves become unreachable.
 - FAQ
-  - scheme of soft Reference and weak Reference
+  - scenario of soft Reference and weak Reference
     - ex: photo cahce
     ```java
     Map<String, SoftReference<Bitmap>>
     ```
 
-https://stackoverflow.com/questions/9809074
-https://dzone.com/articles/weak-soft-and-phantom-references-in-java-and-why-they-matter
+Ref:
+- https://stackoverflow.com/questions/9809074
+- https://dzone.com/articles/weak-soft-and-phantom-references-in-java-and-why-they-matter
 
 
+#### 5. Out of Memory (OOM)
 
+- java.lang.StackOverflowError
+  - Thrown when a stack overflow occurs because an application recurses too deeply.
+- java.lang.OutOfMemoryError: Java heap space
+  - It will be triggered when the application attempts to add more data into the heap space area, but there is not enough room for it.
+- java.lang.OutOfMemoryError: GC overhead limit exceeded
+  - It is the JVM’s way of signalling that your application spends too much time doing garbage collection with too little result. By default the JVM is configured to throw this error if it spends more than 98% of the total time doing GC and when after the GC only less than 2% of the heap is recovered.
+- java.lang.OutOfMemoryError: Direct buffer memory
+  - The actual memory buffers managed by DirectByteBuffer are not allocated in the heap. They are allocated using Unsafe.allocateMemory which allocates "native memory". So increasing or decreasing the heap size won't help.
+- java.lang.OutOfMemoryError: unable to create new native thread
+  - Java application has hit the limit of how many Threads it can launch.
+- java.lang.OutOfMemoryError: Metaspace
+  - When the amount of native memory needed for a class metadata exceeds MaxMetaSpaceSize, a java.lang.OutOfMemoryError exception with a detail MetaSpace is thrown.
 
+Ref:
+- https://docs.oracle.com/javase/8/docs/technotes/guides/troubleshoot/memleaks002.html
+- https://plumbr.io/outofmemoryerror
 
 
 
