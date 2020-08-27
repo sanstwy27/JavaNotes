@@ -111,9 +111,113 @@ Ref:
 - https://docs.oracle.com/javase/8/docs/technotes/guides/troubleshoot/memleaks002.html
 - https://plumbr.io/outofmemoryerror
 
+#### 6. Garbage Collections.
+
+- Reference counting
+- Copying garbage collection
+- Mark-sweep garbage collection
+- Mark-compact garbage collection
+
+#### 7. Garbage Collector Types.
+
+- Serial
+  - It use a single thread to handle heap, and perform stop-the-world pause during any gc. Just see it as toy.
+  - This is default for client-class machine (32bit jvm on windows or single-cpu machine).
+- Parallel
+  - It uses multiple gc threads to handle heap, and perform stop-the-world pause during any gc.
+  - Java 8, this is default for server-class machine (multi-cpu unix-like machine or any 64bit jvm).
+- CMS (Concurrent-Mark-Sweep)
+  - It use 1 or more gc threads to scan the old generation periodically, and discard unused objects, the pause is very short, but use more cpu time.
+    1. CMS initial mark
+    2. CMS concurrent mark
+    3. CMS remark
+    4. CMS concurrent sweep
+  - Warning: since Java 14, it's removed.
+- G1 (Garbage first)
+  - Similar as CMS, it use multiple background gc threads to scan & clear heap.
+  - It divide old generation into parts, it could clean old generation by copy from 1 part to another.
+    Thus it's less possible to get fragmentation.
+  - Since Java 9, this is default for server-class machine (multi-cpu unix-like machine or any 64bit jvm).
+  - Why use G1 as default?
+    - The main reason is to reduce the gc pause time, though the overall throughput might be reduced.
+
+Ref:
+https://stackoverflow.com/questions/54615916/when-to-choose-serialgc-parallelgc-over-cms-g1-in-java
+  
+#### 8. Garbage Collectors.
+
+- Total
+    - UseSerialGC (serial copying)
+    - UseParallelGC (parallel scavenge)
+    - UseConcMarkSweepGC
+    - UseParNewGC
+    - UseParallelOldGC (parallel compacting)
+    - UseG1GC
+    - UseSerialOldGC (deprecated)
+
+- By Generations
+    - Young Gen
+      - UseSerialGC, UseParallelGC, UseParNewGC
+    - Old Gen
+      - UseSerialOldGC (deprecated), UseParallelOldGC, UseConcMarkSweepGC
+    - ALL
+      - UseG1GC
+      
+- For use with
+
+  |         | +UseSerialGC   | +UseParallelGC *1   | +UseParNewGC   |
+  | ------- | -----------    | ------------------- | -------------- |
+  | Young   | UseSerialGC    | UseParallelGC       | UseParNewGC    |
+  | Old     | UseSerialOldGC | UseParallelOldGC    | UseSerialOldGC |
+
+  |         | +UseParallelOldGC                                               | +UseConcMarkSweepGC   |
+  | ------- | --------------------------------------------------------------- | --------------------- |
+  | Young   | UseParallelOldGC                                                | UseParNewGC           |
+  | Old     | UseParallelOldGC(since JDK1.8) or UseSerialOldGC(before JDK1.6) | UseConcMarkSweepGC *2 |
+      
+  
+  > 1. Different Between UseParNewGC and UseParallelGC: UseParallelGC is Adaptive Throughput and PauseTime(-XX:MaxGCPauseMillis) Parallel Collector.
+  > 2. UseConcMarkSweepGC will switch to UseSerialOldGC when CMS is running out of memory
 
 
+      
+#### 9. JVM Params and GC
 
-
-
-
+- display flag of params
+    ```shell
+    > java -XX:+PrintCommandLineFlags -version
+    ```
+    ```shell
+    -XX:G1ConcRefinementThreads=8
+    -XX:GCDrainStackTargetSize=64
+    -XX:InitialHeapSize=535965120
+    -XX:MaxHeapSize=8575441920
+    -XX:MinHeapSize=6815736
+    -XX:+PrintCommandLineFlags
+    -XX:ReservedCodeCacheSize=251658240
+    -XX:+SegmentedCodeCache
+    -XX:+UseCompressedClassPointers
+    -XX:+UseCompressedOops
+    -XX:+UseG1GC
+    -XX:-UseLargePagesIndividualAllocation
+    java version "13.0.1" 2019-10-15
+    Java(TM) SE Runtime Environment (build 13.0.1+9)
+    Java HotSpot(TM) 64-Bit Server VM (build 13.0.1+9, mixed mode, sharing)
+    ```
+- Server/Client mode
+  - 32-bit Windows，default is "Client" mode.
+  - 32-bit other OS, "Server" mode if ram > 2G and processors > dual-core else "Client" mode.
+  - 64-bit, "Server" mode.
+  
+- -Xlog:gc*
+    - DefNew -> Default New Generation (Serial)
+    - Tenured -> Old (Serial)
+    - ParNew -> Parallel New Generation
+    - PSYoungGen -> Parallel Scavenge
+    - ParOldGen -> Parallel Old Generation
+      
+- Parallel GC useful params
+  - -XX:ParallelGCThreads
+  
+  
+  
