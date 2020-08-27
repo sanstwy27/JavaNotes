@@ -219,5 +219,30 @@ https://stackoverflow.com/questions/54615916/when-to-choose-serialgc-parallelgc-
 - Parallel GC useful params
   - -XX:ParallelGCThreads
   
+#### 10. Running Services with JVM Parameters
+
+- commend
+    ```$shell
+    > java -server [jvm params] -jar [service]
+    ```
+- ex:
+    ```shell script
+    > java -server -Xms1024m -Xmx1024m -XX:+UseG1GC -jar -springbootxxx-1.0-SNAPSHOT.war 
+    ```
+- check flags
+  1. list pid
+  ```
+  > jps -l
+  [pid 1] application 1
+  [pid 2] application 2
+  ...
+  [pid n] application n
+  ```
+  2. list flags
+  ```shell script
+  > jinfo -flags [pid]
+  ...
+  Command line: -Xms1024m -Xmx1024m -XX:+UseG1GC
+  ```
   
   
