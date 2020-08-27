@@ -7,6 +7,7 @@
 - memory: free
 - disk: df, iostat
 - network: ifstat
+- troubleshooting High CPU Utilization
 
 #### 1. top
 
