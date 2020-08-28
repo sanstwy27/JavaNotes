@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.util.*;
 
-public class CollectionProblemApplication {
+public class CollectionNotSafeApplication {
 
     public static void main(String[] args) {
         List<String> list = new ArrayList<>();
