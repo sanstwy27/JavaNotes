@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.sanstwy27.designpattern.uml.implementation.PersonServiceBean</OriginalElement>
+  <nodes>
+    <node x="0.0" y="102.0">com.sanstwy27.designpattern.uml.implementation.PersonServiceBean</node>
+    <node x="16.0" y="0.0">com.sanstwy27.designpattern.uml.implementation.PersonService</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.sanstwy27.designpattern.uml.implementation.PersonServiceBean" target="com.sanstwy27.designpattern.uml.implementation.PersonService">
+      <point x="0.0" y="-26.0" />
+      <point x="0.0" y="26.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="92.0" y="77.0" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

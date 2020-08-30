@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.sanstwy27.designpattern.uml.composition.Person</OriginalElement>
+  <nodes>
+    <node x="80.50000000000001" y="102.0">com.sanstwy27.designpattern.uml.composition.Person</node>
+    <node x="0.0" y="0.0">com.sanstwy27.designpattern.uml.composition.IDCard</node>
+    <node x="116.00000000000001" y="0.0">com.sanstwy27.designpattern.uml.composition.Head</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.sanstwy27.designpattern.uml.composition.Person" target="com.sanstwy27.designpattern.uml.composition.IDCard">
+      <point x="-37.0" y="-38.0" />
+      <point x="99.00000000000001" y="77.0" />
+      <point x="48.0" y="77.0" />
+      <point x="0.0" y="26.0" />
+    </edge>
+    <edge source="com.sanstwy27.designpattern.uml.composition.Person" target="com.sanstwy27.designpattern.uml.composition.Head">
+      <point x="0.0" y="-38.0" />
+      <point x="-20.0" y="26.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="48.0" y="26.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Properties</Category>
+    <Category>Methods</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
