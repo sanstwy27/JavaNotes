@@ -1,4 +1,4 @@
-package com.sanstwy27.designpattern.singleton.jdk;
+package com.sanstwy27.designpattern.singleton._jdk;
 
 /**
  * @author Sanstwy27
