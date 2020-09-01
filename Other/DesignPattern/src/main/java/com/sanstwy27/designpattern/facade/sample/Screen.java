@@ -1,0 +1,26 @@
+package com.sanstwy27.designpattern.facade.sample;
+
+/**
+ * @author Sanstwy27
+ * @create 9/1/2020
+ */
+
+public class Screen {
+    private static Screen instance = new Screen();
+
+    private Screen() {
+
+    }
+
+    public static Screen getInstance() {
+        return instance;
+    }
+
+    public void up() {
+        System.out.println(" Screen up ");
+    }
+
+    public void down() {
+        System.out.println(" Screen down ");
+    }
+}
