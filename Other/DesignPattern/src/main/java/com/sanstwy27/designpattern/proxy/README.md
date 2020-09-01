@@ -1,0 +1,5 @@
+- Static Proxy:
+    - staticproxy
+- Dynamic Proxy:
+    - with interface: dynamic
+    - without interface: cglib
