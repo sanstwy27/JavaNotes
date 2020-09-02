@@ -1,0 +1,3 @@
+- Scenario
+  - stable element (Person)
+  - frequent change of visitor (Action)
