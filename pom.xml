@@ -20,6 +20,7 @@
         <module>Fundamental/VariableScope</module>
         <module>Fundamental/Beans</module>
         <module>Fundamental/CommonlyUsedTx</module>
+        <module>Concurrent/AbstractQueuedSynchronizer</module>
     </modules>
 
 
