@@ -33,7 +33,10 @@ import java.util.concurrent.TimeUnit;
  *      will unlock all concurrency requests
  *
  * Solution:
- *     Zookeeper
+ *     1. Redisson Redlock: lock cluster ( success to lock >= n / 2 )
+ *       - AP in CAP theorem
+ *     2. Zookeeper
+ *       - CP in CAP theorem
  *
  */
 
