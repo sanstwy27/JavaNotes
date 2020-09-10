@@ -7,6 +7,20 @@
     docker run -p 13366:3306 --name mysql-master -v E:\DevelopmentConf\master\log:/var/log/mysql -v E:\DevelopmentConf\master\data:/var/lib/mysql -v E:\DevelopmentConf\master\conf:/etc/mysql/my.cnf.d -e MYSQL_ROOT_PASSWORD=123456 -d mysql
     ```
 
+- my.cnf
+    ```shell script
+    [mysqld]
+    server-id=1
+    log-bin=mysql-bin
+    # Need to synchronize the log database
+    binlog-do-db=wr
+     # Do not need to synchronize the log database
+    binlog-ignore-db=mysql
+    binlog-ignore-db=sys
+    binlog-ignore-db=information_schema
+    binlog-ignore-db=performance_schema
+    ```
+
 - mysql
     ```mysql
     docker exec -it container_name bash -c "mysql -u root -p123456"
@@ -55,6 +69,19 @@
 - install
     ```shell script
     docker run -p 13367:3306 --name mysql-slave -v E:\DevelopmentConf\slave\log:/var/log/mysql -v E:\DevelopmentConf\slave\data:/var/lib/mysql -v E:\DevelopmentConf\slave\conf:/etc/mysql/my.cnf.d -e MYSQL_ROOT_PASSWORD=123456 -d mysql
+    ```
+
+- my.cnf
+    ```shell script
+    [mysqld]
+    server-id=2
+     # Need to synchronize the log database
+    binlog-do-db=wr
+     # Do not need to synchronize the log database
+    replicate-ignore-db=mysql
+    replicate-ignore-db=sys
+    replicate-ignore-db=information_schema
+    replicate-ignore-db=performance_schema
     ```
 
 - mysql
