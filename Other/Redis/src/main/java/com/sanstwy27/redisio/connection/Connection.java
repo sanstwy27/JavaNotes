@@ -19,21 +19,21 @@ public class Connection {
     public Connection(String host, int port) {
         this.host = host;
         this.port = port;
+
+        try {
+            this.socket = new Socket(host, port);
+            this.inputStream = socket.getInputStream();
+            this.outputStream = socket.getOutputStream();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public boolean isConnection() {
-        if(socket != null && socket.isClosed() && socket.isBound() && socket.isConnected()) {
+        if(socket != null && !socket.isClosed() && socket.isBound() && socket.isConnected()) {
             return true;
         }
-        try {
-            socket = new Socket(host, port);
-            inputStream = socket.getInputStream();
-            outputStream = socket.getOutputStream();
-        } catch (Exception e) {
-            e.printStackTrace();
-            return false;
-        }
-        return true;
+        return false;
     }
 
     public String sendCommand(byte[] command) {
