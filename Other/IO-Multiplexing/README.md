@@ -1,6 +1,6 @@
 ## IO Multiplexing
 
-#### 1. Select
+#### 1. select
 
     ```c++
       sockfd = socket(AF_INET, SOCK_STREAM, 0);
