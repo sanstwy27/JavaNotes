@@ -1,6 +1,6 @@
 ## IO Multiplexing
 
-#### 1. select
+#### 1. select()
 
     ```c++
       sockfd = socket(AF_INET, SOCK_STREAM, 0);
@@ -39,7 +39,7 @@
       }
     ```
 
-#### 2. poll
+#### 2. poll()
 
     ```c++
       for (i=0;i<5;i++) 
@@ -65,7 +65,7 @@
       }
     ```
     
-#### 3. epoll
+#### 3. epoll()
 
     ```c++
       struct epoll_event events[5];
@@ -94,6 +94,9 @@
       }
     ```
     
+#### Hint
+
+interrupt
     
 #### Reference
 
