@@ -21,6 +21,7 @@
         <module>Fundamental/Beans</module>
         <module>Fundamental/CommonlyUsedTx</module>
         <module>Concurrent/AbstractQueuedSynchronizer</module>
+        <module>Fundamental/IO/BIO</module>
     </modules>
 
 
