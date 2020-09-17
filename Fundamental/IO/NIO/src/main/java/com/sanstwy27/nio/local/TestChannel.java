@@ -1,4 +1,4 @@
-package com.sanstwy27.nio.network;
+package com.sanstwy27.nio.local;
 
 import org.junit.Test;
 
@@ -170,6 +170,8 @@ public class TestChannel {
 
     /**
      * direct buffer copy (transferTo, transferFrom)
+     *
+     *
      */
     @Test
     public void test3() {
